@@ -48,7 +48,7 @@ $(document).mouseleave(function () {
 });
 
 function TPrice(e){
-         total =parseFloat( Number(e) + Number(total));
+        total =( Number(e) + Number(total));
          document.getElementById("T-price").innerText=total;
 }
 
@@ -97,6 +97,7 @@ function getInfo(phone) {
         if(test){
             addToCart(phoneInfo);
         }
+
 }
 function addToCart(phoneShow){
     const row = document.createElement('tr');
@@ -125,13 +126,16 @@ function addToCart(phoneShow){
 }
 
 function removePh(e){
+
+    if(e.target.classList.contains('remove')){
+
     t=$("#phone-list").find('.price');
     let bool =false;
 
 
     for(i=0;i<t.length;i++){
 
-        if(t[i].innerText ==Number(e.target.parentElement.parentElement.querySelector('.pr').innerHTML)){
+         if(t[i].innerText ==Number(e.target.parentElement.parentElement.querySelector('.pr').innerHTML)){
             var sum =(arraySum[i])-1;
             arraySum[i]=sum;
             e.target.parentElement.parentElement.querySelector('.idata').innerHTML=sum;
@@ -145,9 +149,8 @@ function removePh(e){
 
 
 
-     if(e.target.classList.contains('remove')){
 
-         er = -1 * Number(e.target.parentElement.parentElement.querySelector('.pr').innerHTML);
+         er = (-1 * Number(e.target.parentElement.parentElement.querySelector('.pr').innerHTML));
          TPrice(er);
        if(bool){
              e.target.parentElement.parentElement.remove();
