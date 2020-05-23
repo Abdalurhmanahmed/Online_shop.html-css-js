@@ -9,6 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet"type="text/css"href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
 
 </head>
 
@@ -17,7 +20,30 @@
     <header>
         <ul class="top">
             <li style="color: gold">Phone and beyond </li>
-            <li ><i class="fa fa-shopping-cart" style="font-size: 19px"></i></li>
+            <li id="show"><i class="fa fa-shopping-cart" style="font-size: 19px" ></i></li>
+            <div id="shopping-cart" class="u-full-width">
+                <table>
+                    <thead>
+                    <tr >
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th id="pedi">No.</th>
+                        <th>Price</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody id="cart-content"></tbody>
+                   <tr>
+                       <th><div> total price: $<span id="T-price">0.00</span></div></th>
+                   </tr>
+                    <tr>
+                        <th><a href="#" id="clear-cart" class="button-cl">Clear Cart</a></th>
+                        <th><a href="#"><button id="able" class="button-cl">Go to pay</button></a></th>
+
+                    </tr>
+                </table>
+            </div>
+
         </ul>
 
         <nav>
@@ -31,17 +57,16 @@
 
     <section>
         <h1>our products</h1>
-
-        <table>
-
+        <div id="phone-list">
+            <table>
             <tr>
                 <td>
                     <span class="card">
                     <img src="https://img.zap.co.il/pics/8/1/1/5/52325118c.gif"alt="iPhone 11 pro">
-                    <h1>iPhone 11</h1>
-                    <p class="price">$679.99</p>
+                    <h1 >iPhone 11</h1>
+                    <p >$<span class="price">679.99</span></p>
                     <p>Released 2019, October 174g,iOS 11.1.1, up to iOS 13.4 64GB/256GB storage</p>
-                    <p><button>buy it!</button></p>
+                    <p><a  class="ph-add-to-cart" data-id="1">buy it!</a></p>
                     </span>
                 </td>
 
@@ -49,11 +74,11 @@
                     <span class="card">
                         <img src="https://img.zap.co.il/pics/new/2692017134736c.gif"alt="iPhone X" >
                         <h1>iPhone X</h1>
-                        <p class="price">$485.00</p>
+                        <p>$<span class="price">485.00</span></p>
                         <p>Released 2018, October
                             174g,iOS 11.1.1, up to iOS 13.4
                             64GB/256GB storage</p>
-                        <p><button>buy it!</button></p>
+                        <p><a class="ph-add-to-cart" data-id="2">buy it!</a></p>
                     </span>
                 </td>
 
@@ -61,11 +86,11 @@
                     <span class="card">
                         <img src="https://img.zap.co.il/pics/8/2/5/6/48446528c.gif"alt="iPhone XR">
                         <h1>iPhone XR</h1>
-                        <p class="price">$405.00</p>
+                        <p>$<span class="price">405.00</span></p>
                         <p>Released 2017, October
                             174g,iOS 11.1.1, up to iOS 13.4
                             64GB/256GB storage</p>
-                        <p><button>buy it!</button></p>
+                        <p><a  class="ph-add-to-cart" data-id="3">buy it!</a></p>
                     </span>
                 </td>
             </tr>
@@ -75,11 +100,11 @@
                     <span class="card">
                         <img src="https://img.zap.co.il/pics/2/6/4/9/52429462c.gif"alt="Xiaomi Redmi Note 8 " >
                         <h1>Xiaomi Note 8</h1>
-                        <p class="price">$450.99</p>
+                        <p >$<span class="price">450.99</span></p>
                         <p>Released 2019, September
                             Android 9.0; MIUI 11
                             32GB/64GB/128GB </p>
-                        <p><button>buy it!</button></p>
+                        <p><a  class="ph-add-to-cart" data-id="4">buy it!</a></p>
                     </span>
                 </td>
 
@@ -87,11 +112,11 @@
                     <span class="card">
                         <img src="https://img.zap.co.il/pics/3/6/9/5/49345963c.gif"alt="Samsung Galaxy S10 " >
                         <h1>Samsung S10</h1>
-                        <p class="price">$510.00</p>
+                        <p >$<span class="price">510.00</span></p>
                         <p>Released 2019, March
                             157g, Android 9.0, up to Android 10.11.0; One UI
                            </p>
-                        <p><button>buy it!</button></p>
+                        <p><a  class="ph-add-to-cart" data-id="5">buy it!</a></p>
                     </span>
                 </td>
 
@@ -99,16 +124,16 @@
                     <span class="card">
                         <img src="https://img.zap.co.il/pics/5/3/0/7/50057035c.gif"alt="Samsung a70" >
                         <h1>Samsung A70</h1>
-                        <p class="price">$239.99</p>
+                        <p >$<span class="price">239.99</span></p>
                         <p>Released 2017, October
                             174g,iOS 11.1.1, to iOS 13.4
                             64GB/256GB .</p>
-                        <p><button>buy it!</button></p>
+                        <p><a class="ph-add-to-cart" data-id="6">buy it!</a></p>
                     </span>
                 </td>
             </tr>
-
-        </table>
+            </table>
+        </div>
 
         <h1 id="Our">Our Story</h1>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
@@ -122,7 +147,7 @@
         <iframe width="100%" height="700"  src="https://maps.google.com/maps?q=sapir%20col&t=k&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
 
         <div>
-            <a href="https://www.facebook.com/pages/category/Community/Www-feacbook-com-450586301653051/" class="fa fa-facebook"></a>
+            <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
             <a href="https://twitter.com/explore" class="fa fa-twitter"></a>
             <a href="https://www.google.co.il/?hl=iw" class="fa fa-google"></a>
             <a href="https://www.linkedin.com/" class="fa fa-linkedin"></a>
@@ -143,19 +168,19 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
+            <tr class="Bcolor">
                 <th scope="row">1</th>
                 <td>Tel Aviv</td>
                 <td>Gor</td>
                 <td>03-11111111</td>
             </tr>
-            <tr>
+            <tr class="Bcolor">
                 <th scope="row">2</th>
                 <td>Beer Sheva</td>
                 <td>ori</td>
                 <td>02-22222222</td>
             </tr>
-            <tr>
+            <tr class="Bcolor">
                 <th scope="row">3</th>
                 <td>Sderot</td>
                 <td>Hdayag</td>
@@ -196,5 +221,6 @@
         </div>
 
     </footer>
+    <script src="JS.js"></script>
 </body>
 </html>
