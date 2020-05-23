@@ -185,9 +185,13 @@ h1{
     background-color: red;
     border-radius: 50%;
     padding: 5px 10px;
-    text-decoration: none;
     color: white;
     font-weight: bold;
+
+}
+.remove:hover{
+    text-decoration: none;
+    background-color: darkred;
 }
 .u-full-width {
     box-sizing: border-box;
